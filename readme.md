@@ -1,0 +1,1 @@
+docker-compose -f compose-sct.yml up -d

@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres_sct:
+    image: postgres:12
+    ports:
+      - 5432:5432
+    networks:
+      - sct_net
+    environment:
+      POSTGRES_USER: sctuser
+      POSTGRES_PASSWORD: sctpass
+      POSTGRES_DB: dbase_sct
+    command: [ "postgres", "-c", "log_statement=all" ]
+
+networks:
+  sct_net:
